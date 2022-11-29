@@ -9,42 +9,41 @@
 
 Console.WriteLine("Напишите числа через запятую!");
 
-string[] arr = Console.ReadLine().Split(", ");       
+string[] array = Console.ReadLine().Split(", ");       
 
-string[] Rep(string[] text)
+string[] DesiredArrayDimension(string[] arr)
 { 
-    string[] newP = new string[text.Length]; 
+    string[] newarray = new string[arr.Length]; 
     
-    for (int i = 0; i < text.Length; i++)
+    for (int i = 0; i < newarray.Length; i++)
     {
-        int lenght = text[i].Length; 
+        int size = arr[i].Length; 
 
-        if (lenght <= 3) 
+        if (size <= 3) 
         {
-            newP[i] = text[i];
+            newarray[i] = arr[i];
         }
     }
     
-
-    return newP;
+    return newarray;
 }
 
-void PrintArray(string[] array) 
+void PrintArray(string[] arr) 
 {
-
     Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        if(array[i] == null) Console.Write($"{array[i]}");
-        else if (i < array.Length - 2 && array[i] != null) Console.Write($"{array[i]}, ");
-        else if (i < array.Length - 1 && array[i+1] != null) Console.Write($"{array[i]}, ");
-        else Console.Write($"{array[i]}");
+        if(arr[i] == null) Console.Write($"{arr[i]}");
+        else if (i < arr.Length - 2 && arr[i] != null) Console.Write($"{arr[i]}, ");
+        else if (i < arr.Length - 1 && arr[i+1] != null) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
     }
     Console.Write("]");
 }
 
-PrintArray(arr);
+PrintArray(array);
+
 Console.Write(" -> ");
 
-string[] rep = Rep(arr);
-PrintArray(rep);
+string[] desiredArrayDimension = DesiredArrayDimension(array);
+PrintArray(desiredArrayDimension);

@@ -11,6 +11,23 @@ Console.WriteLine("Напишите числа через запятую!");
 
 string[] arr = Console.ReadLine().Split(", ");       
 
+string[] Rep(string[] text)
+{ 
+    string[] newP = new string[text.Length]; 
+    
+    for (int i = 0; i < text.Length; i++)
+    {
+        int lenght = text[i].Length; 
+
+        if (lenght <= 3) 
+        {
+            newP[i] = text[i];
+        }
+    }
+
+    return newP;
+}
+
 void PrintArray(string[] array) 
 {
 
@@ -26,3 +43,7 @@ void PrintArray(string[] array)
 }
 
 PrintArray(arr);
+Console.Write(" -> ");
+
+string[] rep = Rep(arr);
+PrintArray(rep);

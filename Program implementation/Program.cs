@@ -24,6 +24,7 @@ string[] Rep(string[] text)
             newP[i] = text[i];
         }
     }
+    
 
     return newP;
 }

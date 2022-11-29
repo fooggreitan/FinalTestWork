@@ -19,12 +19,12 @@ string[] DesiredArrayDimension(string[] arr)
     {
         int size = arr[i].Length; 
 
-        if (size <= 3) 
+        if (size <= 3)  
         {
             newarray[i] = arr[i];
         }
     }
-    
+
     return newarray;
 }
 

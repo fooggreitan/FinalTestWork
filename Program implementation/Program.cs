@@ -10,3 +10,19 @@
 Console.WriteLine("Напишите числа через запятую!");
 
 string[] arr = Console.ReadLine().Split(", ");       
+
+void PrintArray(string[] array) 
+{
+
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] == null) Console.Write($"{array[i]}");
+        else if (i < array.Length - 2 && array[i] != null) Console.Write($"{array[i]}, ");
+        else if (i < array.Length - 1 && array[i+1] != null) Console.Write($"{array[i]}, ");
+        else Console.Write($"{array[i]}");
+    }
+    Console.Write("]");
+}
+
+PrintArray(arr);
